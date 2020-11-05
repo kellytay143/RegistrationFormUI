@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="shortcut icon" href="favicon_wrcc.png" />
+        <script type="text/javascript" src="scripts.js"></script>
+        <title>WRCC Account Creation</title>
+        <div id="header">
+            <img src="wrcc_header.PNG" alt="wrcc header">
+        </div>
+    </head>
+    <body>
+        <h1 id="title">Create New Account</h1>
+        <div class="form">
+            <form id="registrationForm">
+                <table>
+                    <tr class="formRow">
+                        <td class="headerCol"><label for="acct_name">Account Name:<span aria-hidden="true" class="required">*</span></label></td>
+                        <td class="formCol"><input type="text" id="acct_name" required onfocusout="validateAccountName()"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span id="accountNameError" class="error"></span></td>
+                    </tr>
+                    <tr class="formRow">
+                        <td class="headerCol"><label for="email">Email:<span aria-hidden="true" class="required">*</span></label></td>
+                        <td class="formCol"><input type="email" id="email" required onfocusout="validateEmail()"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span id="emailError" class="error"></span></td>
+                    </tr>
+                    <tr class="formRow">
+                        <td class="headerCol"><label for="first">First Name:<span aria-hidden="true" class="required">*</span></label></td>
+                        <td class="formCol"><input type="text" id="first" required onfocusout="validateName('first')"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span id="firstError" class="error"></span></td>
+                    </tr>
+                    <tr class="formRow">
+                        <td class="headerCol"><label for="last">Last Name:<span aria-hidden="true" class="required">*</span></label></td>
+                        <td class="formCol"><input type="text" id="last" required onfocusout="validateName('last')"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span id="lastError" class="error"></span></td>
+                    </tr>
+                    <tr class="formRow">
+                        <td class="headerCol"><label for="phone">Phone Number:<span aria-hidden="true" class="required">*</span></label></td>
+                        <td class="formCol"><input type="tel" id="phone" required onfocusout="validatePhoneNumber()"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span id="phoneError" class="error"></span></td>
+                    </tr>
+                    <tr class="formRow">
+                        <td class="headerCol"><label for="passwd">Password:<span aria-hidden="true" class="required">*</span></label></td>
+                        <td class="formCol"><input type="password" id="passwd" required onfocusout="validatePassword()"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span id="passwdError" class="error"></span></td>
+                    </tr>
+                    <tr class="formRow">
+                        <td class="headerCol"><label for="cfmpasswd">Confirm Password:<span aria-hidden="true" class="required">*</span></label></td>
+                        <td class="formCol"><input type="password" id="cfmpasswd" required onfocusout="confirmPassword()"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span id="cfmpasswdError" class="error"></span></td>
+                    </tr>
+                    <tr class="formRow">
+                        <td class="headerCol"><span aria-hidden="true" class="required">*</span>Required Field</td>
+                        <td class="formCol" id="submitBtn"><button type="button" onclick="makeRegistrationRequest()">Submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+        <div id="modalId" class="modal">
+            <div class="modalContent">
+              <p id="modalText"></p>
+              <button id="okBtn">OK</button>
+            </div>
+        </div>
+    </body>
+</html>
